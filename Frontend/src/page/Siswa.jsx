@@ -26,14 +26,21 @@ function Siswa() {
     })
 
     const handleDelete =async (id)=>{
+        const konfirmasi = window.confirm(
+            "Apakah mau dihapus?",
+        );
+        if(!konfirmasi){
+            return
+        }
         await 
          API
             .delete(`/siswa/${id}`)
+
             .then((response)=> {
                 console.log(response)
                 alert("Data berhasil diihapus")
                 //setelah menghapus data kemudian mengembalikan / merefresh data
-                API.get("/kategori")
+                API.get("/siswa")
                 .then((response)=>{
                     setSiswa(response.data)
                 })
