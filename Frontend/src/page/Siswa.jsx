@@ -73,18 +73,22 @@ function Siswa() {
                         {siswa.map((post) => (
                             <div className="card" key={post.id}>
                                 <div className="card-body">
-                                    <div className="row align-items-center">
-                                        <div className="col-6">
-                                            <h5 className="card-title">Nama : {post.nama}</h5>
-                                        
-                                            <p className="card-title">ID Siswa : {post.kodeSiswa}</p>
-                                        
-                                            <p className="card-title">Tanggal Lahir : {post.tgl_lahir.split('T')[0]}</p>
-
-                                            <p className="card-title">Jurusan : {post.jurusan}</p>
-                                            <p className="card-title">Alamat : {post.alamat}</p>
+                                    <div className="row align-items">
+                                        <div className="col-4">
+                                            <p className="card-title">Nama </p>
+                                            <p className="card-title">ID Siswa </p>                                        
+                                            <p className="card-title">Tanggal Lahir </p>
+                                            <p className="card-title">Jurusan </p>
+                                            <p className="card-title">Alamat </p>
                                         </div>
-                                        <div className="col-6 text-end">
+                                        <div className="col-4">
+                                            <p>: {post.nama}</p>
+                                            <p>: {post.kodeSiswa} </p>
+                                            <p>: {post.tgl_lahir.split('T')[0]}</p>
+                                            <p>: {post.jurusan}</p>
+                                            <p>: {post.alamat}</p>
+                                        </div>
+                                        <div className="col-4 text-end">
                                             <Link to={`/edit-siswa/${post.id}`} className="btn btn-warning me-1">Edit</Link>
                                             <Link onClick={() => handleDelete(post.id)} className="btn btn-danger me-1">Hapus</Link>
                                         </div>
